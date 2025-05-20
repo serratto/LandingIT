@@ -1,39 +1,244 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bem-vindo!</title> <style>
-        body { 
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            height: 100vh; 
-            margin: 0; 
-            background-color: #fff; /* Cor de fundo opcional */
-            font-family: sans-serif; /* Fonte opcional */
-            text-align: center; /* Para centralizar texto abaixo da logo, se houver */
+    <title>IT Extreme - A Melhor Solução, no Momento Certo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
         }
-        .container {
-            display: flex;
-            flex-direction: column; /* Empilha a logo e o texto verticalmente */
-            align-items: center;
+        .hero-bg {
+            background-color: #003366; /* Um azul escuro, similar ao do logo */
         }
-        img { 
-            max-width: 80%; 
-            max-height: 300px; /* Ajuste a altura máxima da logo conforme necessário */
-            margin-bottom: 20px; /* Espaço entre a logo e o texto (se houver) */
+        .section-title {
+            @apply text-3xl font-bold text-center mb-12 text-gray-800;
         }
-        /* Se quiser adicionar um texto abaixo da logo (opcional):
-        p {
-            font-size: 1.2em;
-            color: #333;
+        .card {
+            @apply bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300;
         }
-        */
+        nav a {
+            @apply text-white hover:text-blue-300 transition-colors duration-300 px-3 py-2 rounded-md text-sm font-medium;
+        }
+        nav .logo {
+            height: 40px; /* Ajustado para melhor visualização na navbar */
+        }
+        .value-item strong {
+            color: #0056b3; /* Azul para destaque nos valores */
+        }
+        .manifesto-box {
+            @apply bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500 text-gray-700;
+        }
+        .cta-button {
+            @apply bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-lg text-lg transition-colors duration-300 shadow-md hover:shadow-lg;
+        }
+        /* Estilo para o menu hamburguer em mobile */
+        #menu-toggle:checked + #menu {
+            display: block;
+        }
     </style>
-</head><body>
-    <div class="container">
-        <img src="minhalogo.jpg" alt="IT Extreme">
+</head>
+<body class="bg-gray-50 text-gray-700">
+
+    <header class="bg-gray-800 text-white sticky top-0 z-50 shadow-md">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <img src="minhalogo.jpg" alt="IT Extreme Logo" class="logo">
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#quem-somos">Quem Somos</a>
+                        <a href="#solucoes">Soluções</a>
+                        <a href="#metodologia">Metodologia</a>
+                        <a href="#contato" class="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-md">Contato</a>
+                    </div>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Abrir menu principal</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
         </div>
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#quem-somos" class="block">Quem Somos</a>
+                <a href="#solucoes" class="block">Soluções</a>
+                <a href="#metodologia" class="block">Metodologia</a>
+                <a href="#equipe" class="block">Equipe</a>
+                <a href="#contato" class="block bg-blue-500 hover:bg-blue-600 mt-1">Contato</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero-bg text-white py-20 md:py-32">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">IT Extreme</h1>
+            <p class="text-xl sm:text-2xl mb-8">A melhor solução, no momento certo.</p>
+            <p class="text-lg sm:text-xl max-w-3xl mx-auto">Fornecemos soluções de informática que proporcionam maior eficiência e dinamismo aos processos das empresas, impulsionando sua competitividade no mercado.</p>
+        </div>
+    </section>
+
+    <section id="quem-somos" class="py-16 md:py-24">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="section-title">QUEM SOMOS</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="text-lg leading-relaxed">
+                    <p class="mb-4">A IT Extreme tem como negócio fornecer soluções de informática que proporcionem maior eficiência e dinamismo aos processos das empresas. Mantemos uma constante busca pela atualização tecnológica, visando a facilitar que os clientes atinjam um nível de competitividade ainda maior que os diferencie no mercado em que atuam.</p>
+                    <p class="mb-4">Nossa filosofia está baseada no desenvolvimento de tecnologia e na criação de soluções sob medida para as necessidades dos clientes. A IT Extreme se diferencia dos concorrentes não pelos serviços oferecidos, mas pela forma como elabora e desenvolve as soluções apresentadas ao mercado.</p>
+                    <p>Essa personalização é possível porque estamos intensamente focados em nossos clientes, suas empresas e requisitos, bem como na elaboração de soluções únicas para corresponder e atingir aos seus objetivos.</p>
+                </div>
+                <div class="card">
+                    <h3 class="text-2xl font-semibold text-blue-600 mb-4">Nossos Pilares Fundamentais</h3>
+                    <ul class="list-disc list-inside space-y-2 text-lg">
+                        <li>Ética</li>
+                        <li>Responsabilidade</li>
+                        <li>Talentos</li>
+                        <li>Competência</li>
+                        <li>Criatividade</li>
+                    </ul>
+                    <h3 class="text-2xl font-semibold text-blue-600 mt-8 mb-4">Nossa Trajetória</h3>
+                    <p class="text-lg">Com mais de 20 anos no mercado, a IT Extreme busca crescer e perpetuar o seu negócio, priorizando relações comerciais que propiciem o desenvolvimento mútuo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="ideologia" class="py-16 md:py-24 bg-gray-100">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="section-title">NOSSA IDEOLOGIA</h2>
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div class="card">
+                    <h3 class="text-2xl font-semibold text-blue-600 mb-3">Missão</h3>
+                    <p class="text-lg leading-relaxed">Contribuir para o crescimento da competitividade de nossos clientes através do fornecimento de produtos e serviços sólidos, seguros e de qualidade, levando o uso da tecnologia da informação ao seu extremo, enfatizando a evolução profissional e pessoal de nossa equipe, sempre de forma ética, preocupando-nos com o bem estar da sociedade e respeitando o meio ambiente.</p>
+                </div>
+                <div class="card">
+                    <h3 class="text-2xl font-semibold text-blue-600 mb-3">Visão</h3>
+                    <p class="text-lg leading-relaxed">Ser reconhecida no segmento de serviços e produtos na área de tecnologia de informação, tornando-se um referencial no uso de tecnologias de ponta, com uma carteira de clientes fidelizada, além de gerar retorno financeiro sobre seus investimentos, tanto para os acionistas quanto para seus colaboradores.</p>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-2xl font-semibold text-center text-gray-800 mb-8">Valores</h3>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="card value-item">
+                        <strong class="text-xl block mb-2">Integridade</strong>
+                        <p>Agir com transparência e honestidade sempre. Trabalhamos para conquistar e manter a confiança das pessoas e empresas.</p>
+                    </div>
+                    <div class="card value-item">
+                        <strong class="text-xl block mb-2">Clientes</strong>
+                        <p>Busca constante da satisfação. Atuamos em parceria, com transparência, honestidade e ética, gerando credibilidade.</p>
+                    </div>
+                    <div class="card value-item">
+                        <strong class="text-xl block mb-2">Colaboradores</strong>
+                        <p>Nosso pilar fundamental. Promovemos realização pessoal e profissional, construindo equipes em harmonia.</p>
+                    </div>
+                    <div class="card value-item">
+                        <strong class="text-xl block mb-2">Tecnologia de Ponta</strong>
+                        <p>Inovação é a força motriz. Desenvolvemos e oferecemos soluções originais e de vanguarda.</p>
+                    </div>
+                    <div class="card value-item">
+                        <strong class="text-xl block mb-2">Comunicação</strong>
+                        <p>Estabelecer relações. Comunicação clara com clientes, parceiros e colaboradores para o sucesso dos projetos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="solucoes" class="py-16 md:py-24">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="section-title">SOLUÇÕES</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="card">
+                    <h3 class="text-xl font-semibold text-blue-600 mb-3">Desenvolvimento de Software</h3>
+                    <p>Criação de Software adaptável a cada cliente, personalizando soluções para atender às necessidades do seu negócio, embasadas em práticas consolidadas e P&D.</p>
+                </div>
+                <div class="card">
+                    <h3 class="text-xl font-semibold text-blue-600 mb-3">Consultoria em TI</h3>
+                    <p>Auxílio na elaboração de metodologias, arquitetura de software, adoção de ferramentas e frameworks, diagnosticando ambientes e recomendando soluções adequadas.</p>
+                </div>
+                <div class="card">
+                    <h3 class="text-xl font-semibold text-blue-600 mb-3">Treinamento</h3>
+                    <p>Treinamentos <em>in-company</em> de todas as tecnologias e ferramentas que utilizamos, sempre atendendo às demandas apresentadas para garantir a satisfação do cliente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="metodologia" class="py-16 md:py-24 bg-gray-100">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="section-title">METODOLOGIA</h2>
+            <p class="text-center text-lg max-w-3xl mx-auto mb-8 leading-relaxed">Desenvolvemos sistemas para nossos clientes, adaptando-nos às suas necessidades. Utilizamos uma metodologia flexível, interativa e incremental: <strong>Scrum</strong>. Este framework ágil maximiza a capacidade da equipe de entregar rapidamente e responder às necessidades emergentes.</p>
+            <div class="manifesto-box max-w-2xl mx-auto">
+                <h3 class="text-xl font-semibold text-blue-700 mb-4">Manifesto para Desenvolvimento Ágil de Software</h3>
+                <p class="mb-3">Estamos descobrindo maneiras melhores de desenvolver software, fazendo-o nós mesmos e ajudando outros a fazerem o mesmo. Através deste trabalho, passamos a valorizar:</p>
+                <ul class="list-disc list-inside space-y-1">
+                    <li><strong>Indivíduos e interações</strong> mais que processos e ferramentas</li>
+                    <li><strong>Software em funcionamento</strong> mais que documentação abrangente</li>
+                    <li><strong>Colaboração com o cliente</strong> mais que negociação de contratos</li>
+                    <li><strong>Responder a mudanças</strong> mais que seguir um plano</li>
+                </ul>
+                <p class="mt-3">Ou seja, mesmo havendo valor nos itens à direita, valorizamos mais os itens à esquerda.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="py-20 md:py-32 bg-blue-600 text-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">PRONTO PARA TRANSFORMAR SEU NEGÓCIO?</h2>
+            <p class="text-lg md:text-xl mb-10 max-w-2xl mx-auto">Entre em contato conosco para discutir suas ideias e encontrar a solução extrema para seus desafios tecnológicos.</p>
+            <a href="mailto:contato@itextreme.com.br" class="cta-button">
+                Fale Conosco Agora
+            </a>
+            <p class="mt-6 text-sm"><a href="http://wa.me/5519997527772" target="_blank" rel="noopener noreferrer" class="underline hover:text-blue-200">Chame-nos no whatsapp</a>.</p>
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 text-gray-300 py-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <img src="minhalogo.jpg" alt="IT Extreme Logo" class="h-10 mx-auto mb-4">
+            <p class="mb-2">IT Extreme</p>
+            <p class="text-sm">&copy; <span id="currentYear"></span> IT Extreme. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Script para o menu mobile
+        const menuButton = document.getElementById('menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const iconHamburger = menuButton.querySelector('svg:nth-child(1)');
+        const iconX = menuButton.querySelector('svg:nth-child(2)');
+
+        menuButton.addEventListener('click', () => {
+            const isExpanded = menuButton.getAttribute('aria-expanded') === 'true' || false;
+            menuButton.setAttribute('aria-expanded', !isExpanded);
+            mobileMenu.classList.toggle('hidden');
+            iconHamburger.classList.toggle('hidden');
+            iconX.classList.toggle('hidden');
+        });
+
+        // Fechar menu mobile ao clicar em um link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuButton.setAttribute('aria-expanded', 'false');
+                mobileMenu.classList.add('hidden');
+                iconHamburger.classList.remove('hidden');
+                iconX.classList.add('hidden');
+            });
+        });
+
+        // Atualizar ano no rodapé
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+
 </body>
 </html>
