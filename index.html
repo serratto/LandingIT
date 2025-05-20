@@ -19,11 +19,15 @@
         .card {
             @apply bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300;
         }
-        nav a {
-            @apply text-white hover:text-blue-300 transition-colors duration-300 px-3 py-2 rounded-md text-sm font-medium;
+        /* Ajustes na navegação para fundo branco */
+        header nav a.nav-link { /* Classe específica para links de navegação no header */
+            @apply text-gray-700 hover:text-blue-600 transition-colors duration-300 px-3 py-2 rounded-md text-sm font-medium;
         }
-        nav .logo {
-            height: 40px; /* Ajustado para melhor visualização na navbar */
+        header nav .logo {
+            height: 48px; /* Logo do cabeçalho aumentada - 3rem (h-12) */
+        }
+        footer .logo {
+            height: 48px; /* Logo do rodapé aumentada - 3rem (h-12) */
         }
         .value-item strong {
             color: #0056b3; /* Azul para destaque nos valores */
@@ -42,22 +46,23 @@
 </head>
 <body class="bg-gray-50 text-gray-700">
 
-    <header class="bg-gray-800 text-white sticky top-0 z-50 shadow-md">
+    <header class="bg-white text-gray-800 sticky top-0 z-50 shadow-md">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
+            <div class="flex items-center justify-between h-20"> 
                 <div class="flex items-center">
                     <img src="minhalogo.jpg" alt="IT Extreme Logo" class="logo">
                 </div>
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
-                        <a href="#quem-somos">Quem Somos</a>
-                        <a href="#solucoes">Soluções</a>
-                        <a href="#metodologia">Metodologia</a>
-                        <a href="#contato" class="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-md">Contato</a>
+                        <a href="#quem-somos" class="nav-link">Quem Somos</a>
+                        <a href="#solucoes" class="nav-link">Soluções</a>
+                        <a href="#metodologia" class="nav-link">Metodologia</a>
+                        <a href="#contato" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors duration-300">Contato</a>
                     </div>
                 </div>
                 <div class="md:hidden flex items-center">
-                    <button id="menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                    
+                    <button id="menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-blue-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500" aria-controls="mobile-menu" aria-expanded="false">
                         <span class="sr-only">Abrir menu principal</span>
                         <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -69,13 +74,12 @@
                 </div>
             </div>
         </div>
-        <div class="md:hidden hidden" id="mobile-menu">
+        <div class="md:hidden hidden bg-white shadow-lg" id="mobile-menu">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#quem-somos" class="block">Quem Somos</a>
-                <a href="#solucoes" class="block">Soluções</a>
-                <a href="#metodologia" class="block">Metodologia</a>
-                <a href="#equipe" class="block">Equipe</a>
-                <a href="#contato" class="block bg-blue-500 hover:bg-blue-600 mt-1">Contato</a>
+                <a href="#quem-somos" class="block nav-link text-gray-700 hover:bg-gray-100">Quem Somos</a>
+                <a href="#solucoes" class="block nav-link text-gray-700 hover:bg-gray-100">Soluções</a>
+                <a href="#metodologia" class="block nav-link text-gray-700 hover:bg-gray-100">Metodologia</a>
+                <a href="#contato" class="block bg-blue-500 hover:bg-blue-600 text-white mt-1 px-3 py-2 rounded-md text-base font-medium text-center">Contato</a>
             </div>
         </div>
     </header>
@@ -203,9 +207,9 @@
         </div>
     </section>
 
-    <footer class="bg-gray-800 text-gray-300 py-12">
+    <footer class="bg-white text-gray-700 py-12 border-t border-gray-200">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <img src="minhalogo.jpg" alt="IT Extreme Logo" class="h-10 mx-auto mb-4">
+            <img src="minhalogo.jpg" alt="IT Extreme Logo" class="logo mx-auto mb-4">
             <p class="mb-2">IT Extreme</p>
             <p class="text-sm">&copy; <span id="currentYear"></span> IT Extreme. Todos os direitos reservados.</p>
         </div>
